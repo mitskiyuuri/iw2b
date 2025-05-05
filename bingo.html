@@ -7,16 +7,23 @@
     <title>Cartela de Bingo</title>
     <style>
          body, html {
+             background-color: azure;
                 margin: 0;
                 padding: 0;
                 height: 100%;
-                background-color: rgb(169, 137, 184);
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
  
-            td, th{
+            td{
+                font-size: 75px;
+                padding: 7px 17px;
+                text-align: center;
+                border: 2px solid;
+            }
+            th{
+                background-color: rgb(169, 137, 184);
                 font-size: 75px;
                 padding: 7px 17px;
                 text-align: center;
@@ -74,7 +81,7 @@
                     <td id="o5"onclick="MarcarSorteado('o5', this)">74</td>
                 </tr>
             </tbody>
-        </table>az
+        </table>
 
         <button onclick="GerarCartela()">
             Gerar Cartela
