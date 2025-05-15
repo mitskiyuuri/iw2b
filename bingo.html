@@ -84,114 +84,107 @@
         </table>
 
         <button onclick="GerarCartela()">
-            Gerar Cartela
+        Gerar Cartela  
         </button>
-    </div>
-    
 
+        <button onclick="SortearNumero()">
+        Sortear Número
+        </button>
+
+        <div id="painelNumeros" style="margin-top: 30px; display: flex; flex-wrap: wrap; max-width: 600px;">
+        </div>
+    </div>
 
     <script type="text/javascript">
-        var cartelaB = [];
-        var cartelaI = [];
-        var cartelaN = [];
-        var cartelaG = [];
-        var cartelaO = [];
+        var cartelaB = []
+            cartelaI = []
+            cartelaN = []
+            cartelaG = []
+            cartelaO = []
 
         function GerarArray(NumeroInicial, quantidade) {
-            var retorno = []
-            for (var i = 0; i < quantidade; i++) 
-            {
-                retorno.push(NumeroInicial)
-                NumeroInicial++;
+            var retorno = [];
+            for (var i = 0; i < quantidade; i++) {
+                retorno.push(NumeroInicial++);
             }
-            return retorno
+            return retorno;
         }
-       
-       
-        var b2 = document.getElementById("b2");
-        var b1 = document.getElementById("b1");
-        console.log(b2);
-        console.log(b1);
 
-        function MarcarSorteado(nomeId, elemento){
-            console.log("Elemento=")
-            console.log(elemento)
-            console.log(nomeId)
+        function MarcarSorteado(nomeId, elemento) {
             elemento.style.backgroundColor = "red";
-            if(elemento.style.backgroundColor == "red")
-            {
-                alert("a cor é red")
-            }
-            else
-            {
+        }
 
+        function GerarCartela() {
+            cartelaB = MisturarArray(GerarArray(1, 15));
+            cartelaI = MisturarArray(GerarArray(16, 15));
+            cartelaN = MisturarArray(GerarArray(31, 15));
+            cartelaG = MisturarArray(GerarArray(46, 15));
+            cartelaO = MisturarArray(GerarArray(61, 15));
+
+            for (var i = 1; i <= 5; i++) {
+                document.getElementById("g" + i).innerText = cartelaG[i];
+                document.getElementById("i" + i).innerText = cartelaI[i];
+                document.getElementById("b" + i).innerText = cartelaB[i];
+                document.getElementById("n" + i).innerText = cartelaN[i];
+                document.getElementById("o" + i).innerText = cartelaO[i];
             }
         }
 
-
-
-        cartelaB = GerarArray(1,15);
-        cartelaI = GerarArray(16,15);
-        cartelaN = GerarArray(31,15);
-        cartelaG = GerarArray(46,15);
-        cartelaO = GerarArray(61,15);
-
-        function GerarCartela()
-        {
-            cartelaB = MisturarArray(GerarArray(1,15));
-            cartelaI = MisturarArray(GerarArray(16,15));
-            cartelaN = MisturarArray(GerarArray(31,15));
-            cartelaG = MisturarArray(GerarArray(46,15));
-            cartelaO = MisturarArray(GerarArray(61,15));
-
-            for(var i = 1; i <= 5; i++ )
-            {
-                var td = document.getElementById("g"+i)
-                td.innerText = cartelaG[i]
-                
-                td = document.getElementById("i"+i)
-                td.innerText = cartelaI[i]
-
-                td = document.getElementById("b"+i)
-                td.innerText = cartelaB[i]
-
-                td = document.getElementById("n"+i)
-                td.innerText = cartelaN[i]
-
-                td = document.getElementById("o"+i)
-                td.innerText = cartelaO[i]
-            }
-        }
-
-
-       
         function NumeroAleatorio(numeroMinimo, numeroMaximo) {
-            var retorno = Math.floor(Math.random() * numeroMaximo)
-            if (retorno > 0 && retorno >= numeroMinimo && retorno <= numeroMaximo) {
-                return retorno
-            } else {
-                return NumeroAleatorio(numeroMinimo, numeroMaximo)
-            }
+            return Math.floor(Math.random() * (numeroMaximo - numeroMinimo + 1)) + numeroMinimo;
         }
-
-
-
 
         function MisturarArray(array) {
-            var aleatorio
-            var cont = array.length
-            var auxiliar
-            while (cont != 0) {
-                aleatorio = NumeroAleatorio(1, array.length)
-                cont--
-                auxiliar = array[cont]
-                array[cont] = array[aleatorio]
-                array[aleatorio] = auxiliar
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
             }
-            return array
+            return array;
         }
-    </script>
 
+        var NumerosSorteados = MisturarArray(GerarArray(1, 75));
+        var posicaoAtual = 0;
+
+        function CriarPainelNumeros() {
+            var painel = document.getElementById("painelNumeros");
+            for (var i = 1; i <= 75; i++) {
+                var numeroDiv = document.createElement("div");
+                numeroDiv.innerText = i;
+                numeroDiv.id = "numero" + i;
+                numeroDiv.style.width = "60px";
+                numeroDiv.style.height = "60px";
+                numeroDiv.style.margin = "5px";
+                numeroDiv.style.display = "flex";
+                numeroDiv.style.justifyContent = "center";
+                numeroDiv.style.alignItems = "center";
+                numeroDiv.style.border = "1px solid black";
+                numeroDiv.style.fontSize = "24px";
+                numeroDiv.style.backgroundColor = "white";
+                painel.appendChild(numeroDiv);
+            }
+        }
+        function SortearNumero() {
+            if (posicaoAtual >= NumerosSorteados.length) {
+                alert("Todos os números já foram sorteados!");
+                return;
+            }
+            var sorteado = NumerosSorteados[posicaoAtual];
+            posicaoAtual++;
+            var elemento = document.getElementById("numero" + sorteado);
+            if (elemento) {
+                elemento.style.backgroundColor = "red";
+                elemento.style.color = "white";
+            }
+            alert("Número sorteado: " + sorteado);
+        }
+            alert("Número sorteado: " + sorteado);
+
+
+        window.onload = function () {
+            CriarPainelNumeros();
+        };
+    </script>
 </body>
+
 
 </html>
