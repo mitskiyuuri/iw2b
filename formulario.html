@@ -31,6 +31,7 @@
             if (cep.value == "")
             {
                 alert('Campo CEP deve ser preenchido')
+                
                 return false
             }
 
@@ -48,10 +49,24 @@
                 return false
             }
 
-            var numero = document.getElementById('numero')
-            if (numero.value == "")
+            var bairro = document.getElementById('bairro')
+            if (bairro.value == "")
             {
-                alert('Campo NUMERO deve ser preenchido')
+                alert('Campo BAIRRO deve ser preenchido')
+                return false
+            }
+
+            var cidade = document.getElementById('cidade')
+            if (cidade.value == "")
+            {
+                alert('Campo CIDADE deve ser preenchido')
+                return false
+            }
+
+            var estado = document.getElementById('estado')
+            if (estado.value == "")
+            {
+                alert('Campo ESTADO deve ser preenchido')
                 return false
             }
         }
