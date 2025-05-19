@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formu--**larios</title>
+    <title>Formularios</title>
 </head>
 <body>
-    <form action="salvar.html" method="post">
+    <form action="salvar.html" method="post" onsubmit="return ValidarFormulario()">
         <label>Cep</label>
         <input type="text" name="cep" id="cep" class="campo" /><br><br>
         <label>Endereço</label>
@@ -24,5 +24,37 @@
             Enviar dados
         </button>
     </form>
+    <script>
+        function ValidarFormulario()
+        {
+            var cep = document.getElementById('cep')
+            if (cep.value == "")
+            {
+                alert('Campo CEP deve ser preenchido')
+                return false
+            }
+
+            var endereco = document.getElementById('endereco')
+            if (endereco.value == "")
+            {
+                alert('Campo ENDEREÇO deve ser preenchido')
+                return false
+            }
+
+            var numero = document.getElementById('numero')
+            if (numero.value == "")
+            {
+                alert('Campo NUMERO deve ser preenchido')
+                return false
+            }
+
+            var numero = document.getElementById('numero')
+            if (numero.value == "")
+            {
+                alert('Campo NUMERO deve ser preenchido')
+                return false
+            }
+        }
+    </script>
 </body>
 </html>
