@@ -1,9 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="carros">
 <script>
     var carro = {
 
         "marca":"Hyundai",
         "modelo":"HB20",
-        "ano":"2024"
+        "ano":"2024",
         "cor":"vermelho"
     }
+
+    document.write(carro.modelo);
+
+    var carro2 = {
+
+        "marca":"Fiat",
+        "modelo":"Uno",
+        "ano":"2023",
+        "cor":"cinza"
+    }
+    var carro3 = {
+
+        "marca":"Honda",
+        "modelo":"Civic",
+        "ano":"2022",
+        "cor":"preto"
+    }
+    var CorCarros = document.getElementById("carros")
+    CorCarros.innerText = carro, carro2, carro3;
 </script>
+</div>
+</body>
+</html> 
