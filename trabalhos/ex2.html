@@ -7,40 +7,53 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="style.css">
+  </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-success">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">PETS</a>
+          <a class="navbar-brand"> <img src="logo.jpg" width="auto" height="50px"></a> 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" aria-current="page" href="ex1.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link active" href="ex2.html">Clinicas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                <a class="nav-link" href="#">Contatos</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
+<div class="container mt-4">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h5>Pesquisar Clinicas</h5>
+      </div>
+      <div class="card-body">
+        <div class="d-flex">
+        <input type="text" class="form-control me-2" placeholder="Pesquise aqui...">
+        <button class="btn btn-primary">Pesquisar</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
 
       
 <div class="container mt-4">
     <div class="card">
       <div class="card-header d-flex justify-content-between align-items-center">
-        <h5>Lista de Alunos</h5>
-        <button class="btn btn-success">Novo Aluno</button>
+        <h5>Lista de Clinicas</h5>
+        <a class="btn btn-success" href="ex3.html">Cadastrar Clinica</a>
       </div>
       <div class="card-body">
         <table class="table table-striped table-hover">
@@ -48,61 +61,108 @@
             <tr>
               <th>#</th>
               <th>Nome</th>
-              <th>RA</th>
-              <th>Data de Nascimento</th>
+              <th>Especialidade</th>
+              <th>Telefone</th>
               <th>Ações</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td>Ana Silva</td>
-              <td>F02457</td>
-              <td>15/02/2007</td>
-              <td>
-                <button class="btn btn-warning btn-sm">Editar</button>
-                <button class="btn btn-danger btn-sm">Excluir</button>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>João Pedro</td>
-              <td>F03125</td>
-              <td>20/08/2006</td>
-              <td>
-                <button class="btn btn-warning btn-sm">Editar</button>
-                <button class="btn btn-danger btn-sm">Excluir</button>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carla Mendes</td>
-              <td>F04511</td>
-              <td>03/12/2007</td>
-              <td>
-                <button class="btn btn-warning btn-sm">Editar</button>
-                <button class="btn btn-danger btn-sm">Excluir</button>
-              </td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Lucas Almeida</td>
-              <td>F05234</td>
-              <td>25/04/2008</td>
-              <td>
-                <button class="btn btn-warning btn-sm">Editar</button>
-                <button class="btn btn-danger btn-sm">Excluir</button>
-              </td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Maria Fernanda</td>
-              <td>F06789</td>
-              <td>12/11/2006</td>
-              <td>
-                <button class="btn btn-warning btn-sm">Editar</button>
-                <button class="btn btn-danger btn-sm">Excluir</button>
-              </td>
+<td>1</td>
+      <td>PetCare São Paulo</td>
+      <td>Clínica Geral</td>
+      <td>(11) 99999-0001</td>
+      <td>
+        <button class="btn btn-warning  btn-sm">Entrar em Contato</button>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Vet&Gato</td>
+      <td>Gatos e Exóticos</td>
+      <td>(14) 98888-2222</td>
+      <td>
+        <button class="btn btn-warning btn-sm">Entrar em Contato</button>
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Amigo Fiel</td>
+      <td>Cirurgia e Emergência</td>
+      <td>(11) 97777-3333</td>
+      <td>
+        <button class="btn btn-warning  btn-sm">Entrar em Contato</button>
+      </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Clínica Patinhas</td>
+      <td>Vacinação e Preventivo</td>
+      <td>(14) 96666-4444</td>
+      <td>
+        <button class="btn btn-warning  btn-sm">Entrar em Contato</button>
+      </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Vida Animal</td>
+      <td>Dermatologia e Nutrição</td>
+      <td>(14) 95555-5555</td>
+      <td>
+        <button class="btn btn-warning  btn-sm">Entrar em Contato</button>
+      </td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Clínica Bicho Feliz</td>
+      <td>Clínica Geral</td>
+      <td>(11) 94444-6666</td>
+      <td>
+        <button class="btn btn-warning  btn-sm">Entrar em Contato</button>
+      </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>VetAmigos</td>
+      <td>Cirurgia e Emergência</td>
+      <td>(14) 93333-7777</td>
+      <td>
+        <button class="btn btn-warning  btn-sm">Entrar em Contato</button>
+      </td>
+    <tr>
+      <td>8</td>
+      <td>PetSaúde</td>
+      <td>Odontologia e Preventivo</td>
+      <td>(11) 92222-8888</td>
+      <td><button class="btn btn-warning btn-sm">Entrar em Contato</button></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Clínica Focinhos</td>
+      <td>Emergência e Cirurgia</td>
+      <td>(11) 91111-9999</td>
+      <td><button class="btn btn-warning btn-sm">Entrar em Contato</button></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Amor de Pet</td>
+      <td>Gatos e Pequenos Animais</td>
+      <td>(11) 90000-1111</td>
+      <td><button class="btn btn-warning btn-sm">Entrar em Contato</button></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Clínica Animal Center</td>
+      <td>Vacinação e Clínica Geral</td>
+      <td>(11) 98888-2223</td>
+      <td><button class="btn btn-warning btn-sm">Entrar em Contato</button></td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>PetHospital SP</td>
+      <td>Internação e Emergência</td>
+      <td>(11) 97777-4444</td>
+      <td><button class="btn btn-warning btn-sm">Entrar em Contato</button></td>
             </tr>
           </tbody>
         </table>
